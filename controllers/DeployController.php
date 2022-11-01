@@ -17,10 +17,10 @@ class DeployController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::class,
-                'only' => ['logout'],
+                'only' => ['index'],
                 'rules' => [
                     [
-                        'actions' => ['logout'],
+                        'actions' => ['index'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -29,7 +29,7 @@ class DeployController extends Controller
             'verbs' => [
                 'class' => VerbFilter::class,
                 'actions' => [
-                    'index' => ['post'],
+                    'index' => ['post', 'get'],
                 ],
             ],
         ];
